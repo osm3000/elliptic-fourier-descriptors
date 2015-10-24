@@ -11,7 +11,6 @@ Repository available at http://www.github.com/alessandroferrari
 '''
 
 import cv2
-import cv2.cv as cv
 import numpy as np
 
 
@@ -41,7 +40,7 @@ def sort_contours(contours):
 
 def deltaX_deltaY(bin_im):
     
-    contours_list, hierarchy= cv2.findContours( bin_im, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_NONE)
+    _, contours_list, hierarchy= cv2.findContours( bin_im, mode=cv2.RETR_EXTERNAL, method=cv2.CHAIN_APPROX_NONE)
 
     contours_list = sort_contours(contours_list)
 

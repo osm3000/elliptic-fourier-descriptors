@@ -7,11 +7,10 @@ Test unit
 '''
 
 import cv2
-import cv2.cv as cv
 import numpy as np
 import os
 
-from wl_ia.shape_analysis.elliptic_fourier_descriptors import *
+from elliptic_fourier_descriptors import *
 
 testdir = os.path.join("/tmp")
 
@@ -50,7 +49,7 @@ test_shape3 = np.array([[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],], np.uint8)*255
 
 
-N = 10
+N = 2
 
 #efds1 is a 3D array, 1st dim indexes different segments in the image,
 #2nd dim indexes descriptors order, while 3d dimension is to access 
@@ -58,7 +57,7 @@ N = 10
 efds1, K1, T1 = elliptic_fourier_descriptors(test_shape1,N)
 
 print "shape 1 \n {0}".format(efds1)
-
+print efds1.shape
 efds2, K2, T2 = elliptic_fourier_descriptors(test_shape2,N)
 
 print "shape 2 \n {0}".format(efds2)
